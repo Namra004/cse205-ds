@@ -1,0 +1,32 @@
+Question 160
+class Solution(object):
+    def getIntersectionNode(self, headA, headB):
+        tempA=headA
+        cnt=0
+        while tempA:
+            tempA=tempA.next
+            cnt+=1
+        
+        tempB=headB
+        count=0
+        while tempB:
+            tempB=tempB.next
+            count+=1
+        
+        temA, tempB=headA, headB
+        while cnt >count:
+            if headA:
+                headA=headA.next
+            cnt-=1
+        while count>cnt:
+            if headB:
+                headB=headB.next
+            count-=1
+
+        while headA :
+            if headA==headB:
+                return headA
+                
+            headA=headA.next
+            headB=headB.next
+        return None

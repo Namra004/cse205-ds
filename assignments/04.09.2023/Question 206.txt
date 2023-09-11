@@ -1,0 +1,13 @@
+Question 206
+class Solution(object):
+    def reverseList(self, head):
+       temp=head
+       prev=None
+       while temp!=None:
+            next=temp.next
+            temp.next=prev
+            prev=temp
+            temp=next
+       return prev
+
+        
