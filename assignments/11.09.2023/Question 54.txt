@@ -1,0 +1,24 @@
+Question 54
+class Solution(object):
+    def spiralOrder(self, matrix):
+        m=len(matrix)
+        n=len(matrix[0])
+        l=0 ; r=n-1
+        top=0; bot=m-1 
+        ans=[]
+        while (top<=bot and l<=r):
+            for i in range(l,r+1):
+                ans.append(matrix[top][i])
+            top+=1
+            for i in range(top,bot+1):
+                ans.append(matrix[i][r])
+            r-=1
+            if(top<=bot):
+                for i in range(r,l-1,-1):
+                    ans.append(matrix[bot][i])
+                bot-=1
+            if(l<=r):
+                for i in range(bot,top-1,-1):
+                    ans.append(matrix[i][l])
+                l+=1
+        return ans     

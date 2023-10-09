@@ -1,0 +1,12 @@
+Question 867
+class Solution(object):
+    def transpose(self, matrix):
+        a=len(matrix)
+        b=len(matrix[0])
+        mat=[[0 for x in range(a)]for y in range(b)]
+        for i in  range(b):
+            
+            for k in range(a):
+                mat[i][k]=matrix[k][i]
+                
+        return mat

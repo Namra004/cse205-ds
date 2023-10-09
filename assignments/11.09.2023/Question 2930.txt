@@ -1,0 +1,11 @@
+Question 2930
+class Solution(object):
+    def removeStars(self, s):
+        st=[]
+        for char in s:
+            if char!="*":
+                st.append(char)
+            elif st:
+                st.pop()
+        return ''.join(st)
+        
