@@ -1,0 +1,17 @@
+Question 844
+class Solution(object):
+    def backspaceCompare(self, s, t):
+        st=[]
+        for char in s:
+            if char!="#":
+                st.append(char)
+            elif st:
+                st.pop()
+        
+        stc=[]
+        for char in t:
+            if char!="#":  
+                stc.append(char)
+            elif stc:
+                stc.pop()
+        return ''.join(st)==''.join(stc)

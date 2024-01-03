@@ -1,0 +1,14 @@
+Question 682
+class Solution(object):
+    def calPoints(self, operations):
+        st=[]
+        for x in operations:
+            if x=="D":
+                st.append(int(st[-1])*2)
+            elif x=="+":
+                st.append(int(st[-1]+ st[-2]))   
+            elif x=="C":
+                st.pop()
+            else:
+                st.append(int(x))
+        return sum(st)

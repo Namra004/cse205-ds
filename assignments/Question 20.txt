@@ -1,0 +1,15 @@
+Question 20
+class Solution(object):
+    def isValid(self, s):
+        st=[]
+        pairs={
+            '(':')',
+            '{':'}',
+            '[':']'   }
+        for bracs in s:
+            if bracs in pairs:
+                st.append(bracs)
+            elif len(st)==0 or bracs!=pairs[st.pop()]:
+                return False
+        return len(st)==0
+        
